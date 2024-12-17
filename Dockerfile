@@ -32,4 +32,3 @@ RUN useradd -ms /bin/bash $USERNAME
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-# CMD ["/bin/bash"]
