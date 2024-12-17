@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 RUN apt update -y && apt upgrade -y
 RUN apt install -y \
@@ -27,9 +27,9 @@ RUN chmod +x linux-install.sh
 RUN ./linux-install.sh
 
 # switch user
-ARG USERNAME=ubuntu
-RUN passwd -d $USERNAME
+ARG USERNAME=sam
+RUN useradd -ms /bin/bash $USERNAME
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-CMD ["/bin/bash"]
+# CMD ["/bin/bash"]
